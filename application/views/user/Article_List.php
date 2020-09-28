@@ -7,18 +7,6 @@
 	return $story_desc;  
 } ?>
 
-<script>
-   /* $(document).ready(function() {
-        $('#my_input').on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#mytable").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });*/
-
-
-</script>
 <div class="container" style="margin-top:20px;">
     <div class="row ">
         <div class="col-lg-12 ">
@@ -33,14 +21,14 @@
 
 <div class="container" style="margin-top:20px">
     <?php foreach($articles as $data){ ?>
-    <h2 class="font-weight-lighter " id="mytable"><?= anchor("user/article_page/{$data->id}",$data->title); ?></h2>
+    <h4 class="font-weight-lighter " id="mytable"><?= anchor("user/article_page/{$data->id}",$data->title); ?></h4>
     <div class="row" style="margin-top:20px">
 
         <div class="col-lg-4">
             <p><img src="<?php echo $data->image?>" alt="" width="230" height="150"></P>
         </div>
         <div class="col-lg-6">
-            <p class="lead text-justify"><?php echo readMoreHelper($data->body); ?></p>
+            <p class=" text-justify medium" style="color:#7f8c8d;"><?php echo readMoreHelper($data->body); ?></p>
         </div>
 
     </div>
