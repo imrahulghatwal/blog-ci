@@ -3,12 +3,6 @@
 
 class Admin extends CI_Controller {
     
-	/*public function __construct(){
-		parent::__construct();
-		
-		
-	}*/
-	
 	public function login()
 	        {  
 			   if($this->session->userdata('id'))
@@ -145,7 +139,7 @@ class Admin extends CI_Controller {
 				$this->load->view('Admin/add_article',compact('upload_error'));
 			}
 		}
-		
+				//----------------delete---------------->>>
 		public function delete_article(){
 			$id = $this->input->post('id');
 			$this->load->model('login_model');
@@ -153,13 +147,14 @@ class Admin extends CI_Controller {
 				redirect('admin/welcome');
 			}
 		}
+				//----------------update---------------->>>
 		public function edit_article($edit_id){
 			$this->load->model('login_model');
 			$arr1['result']=$this->login_model->find_article($edit_id);
 			$this->load->view('admin/edit_article',$arr1);
 		}
 		
-			
+			//----------------update---------------->>>
 		public function update_article($article_id){
 			$arr = $this->input->post();
 			$this->load->model('login_model');	
@@ -174,6 +169,7 @@ class Admin extends CI_Controller {
 				redirect('admin/welcome');
 		}
 		
+		//----------------logout---------------->>>
 		public function logout(){		
 			$this->session->unset_userdata('id');
 			redirect('Admin/login');

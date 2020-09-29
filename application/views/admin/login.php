@@ -24,7 +24,7 @@
   </div>
   </div>
    <div class="row">
-    <div class="col-lg-6" style="margin-top:-10px;">
+    <div class="col-lg-6 " style="margin-top:-10px;">
 	<?php echo form_error('uname','<div class="text-danger">','</div>'); ?>
 	</div>
 	</div>
